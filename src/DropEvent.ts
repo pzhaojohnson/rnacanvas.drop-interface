@@ -3,7 +3,7 @@
  */
 export interface DropEvent {
   readonly dataTransfer: {
-    files: FileList | undefined;
+    files: Iterable<File> | undefined;
   } | null;
 
   preventDefault(): void;
