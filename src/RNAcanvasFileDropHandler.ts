@@ -1,5 +1,7 @@
 import type { App } from './App';
 
+import type { DropEvent } from './DropEvent';
+
 /**
  * Opens dropped RNAcanvas files (with ".rnacanvas" extension) in the target app.
  */
@@ -15,7 +17,7 @@ export class RNAcanvasFileDropHandler {
    *
    * Does nothing if an RNAcanvas file (with ".rnacanvas") was not dropped.
    */
-  async handle(event: DragEvent) {
+  async handle(event: DropEvent) {
     let files = event.dataTransfer?.files ?? [];
     let filesArray = [...files];
 

@@ -1,5 +1,7 @@
 import type { App } from './App';
 
+import { DropEvent } from './DropEvent';
+
 import { RNAcanvasFileDropHandler } from './RNAcanvasFileDropHandler';
 
 /**
@@ -15,7 +17,7 @@ export class DropHandler {
   /**
    * Handles the provided drop event.
    */
-  async handle(event: DragEvent) {
+  async handle(event: DropEvent) {
     await this.#rnaCanvasFileDropHandler.handle(event);
   }
 }
