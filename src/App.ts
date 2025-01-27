@@ -2,6 +2,13 @@
  * The app interface used by drop handler classes.
  */
 export interface App {
+  /**
+   * The drawing of the app.
+   */
+  readonly drawing: {
+    readonly domNode: SVGSVGElement;
+  }
+
   undo(): void;
   pushUndoStack(): void;
 
