@@ -1,33 +1,3 @@
-/**
- * The app interface used by drop handler classes.
- */
-export interface App {
-  /**
-   * The drawing of the app.
-   */
-  readonly drawing: {
-    readonly domNode: SVGSVGElement;
-  }
+import type { PasteHandler } from '@rnacanvas/paste-interface';
 
-  undo(): void;
-  pushUndoStack(): void;
-
-  /**
-   * Restores the app to a previous state.
-   *
-   * Throws if unable to do so.
-   */
-  restore(previousState: unknown): void | never;
-
-  /**
-   * Deselects all selected elements.
-   */
-  deselect(): void;
-
-  readonly drawingView: {
-    /**
-     * Fits the user's view of the drawing to its content.
-     */
-    fitToContent(): void;
-  }
-}
+export type App = ConstructorParameters<typeof PasteHandler>[0];
